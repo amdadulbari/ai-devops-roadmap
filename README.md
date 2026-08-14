@@ -6,6 +6,16 @@ Most guides show you flashy AI demos. This one answers the question you actually
 
 This is written from day-to-day platform engineering: Kubernetes, GitOps, policy as code, and observability. It is meant to be useful whether you are just starting with AI or already building tools with it.
 
+<p align="center">
+  <img src="assets/roadmap.svg" alt="AI for DevOps roadmap: six stages from foundations to production safety, with Assist, Gate, and Auto trust levels" width="720">
+</p>
+
+## New here? Start with these
+
+- [Getting started](docs/getting-started.md): a short first-step path, even if you have never used AI at work.
+- [Prompt library](prompts/README.md): ready-to-use prompts you can try on real work today.
+- [Using AI to watch your systems](docs/monitoring.md): a deep dive on metrics, logs, and traces.
+
 ## Who this is for
 
 - DevOps, platform, and SRE engineers who want to use AI in their daily work.
@@ -26,7 +36,15 @@ The quickest way to lose trust in AI at work is to let it change production with
 
 Start at Assist. Move to Gate as you build confidence. Treat Auto as the rare exception that has to earn its place.
 
-## Contents
+## What is in this repo
+
+- The roadmap below: seven stages, from foundations to production safety.
+- [prompts](prompts/README.md): a library of ready-to-use prompts for common DevOps tasks.
+- [docs/monitoring.md](docs/monitoring.md): a deep dive on using AI for metrics, logs, and traces.
+- [docs/getting-started.md](docs/getting-started.md): the first steps and the two habits that keep you safe.
+- [examples](examples/README.md): small, safe examples you can learn from and adapt.
+
+## The roadmap
 
 1. [Everyday help](#1-everyday-help)
 2. [Watching your systems: metrics, logs, and traces](#2-watching-your-systems-metrics-logs-and-traces)
@@ -42,10 +60,10 @@ Start at Assist. Move to Gate as you build confidence. Treat Auto as the rare ex
 This is where almost everyone should start. It is low risk because you review everything before it runs. Trust level: Assist.
 
 - Write and clean up Terraform, Helm charts, Kustomize, and Kubernetes manifests.
-- Turn a requirement or a security finding into a draft policy (Kyverno, OPA, conftest).
+- Turn a requirement or a security finding into a draft policy (Kyverno, OPA, conftest). See the [policy prompt](prompts/write-a-kyverno-policy.md).
 - Explain a confusing log line, stack trace, or error message in plain language.
 - Write and improve runbooks and internal docs.
-- Summarize a pull request or draft a clear commit message.
+- Summarize a pull request or draft a clear commit message. See the [PR review prompt](prompts/review-a-pull-request.md).
 - Answer read-only questions in Slack, like "which services are on version 1.4".
 
 One rule: never paste secrets, tokens, or customer data into a hosted model. Redact first, or use a model that runs locally.
@@ -54,40 +72,23 @@ One rule: never paste secrets, tokens, or customer data into a hosted model. Red
 
 This is where AI saves the most time day to day. You are drowning in signals, and AI is good at reading a lot of text fast and explaining it in words. You stay in charge of what to do next. Trust level: Assist to Gate.
 
-### Metrics
+Short version:
 
-- Ask questions in plain language and get a PromQL query back, then check it before running.
-- Get a spike or a drop explained: what went up, when, and what changed around that time.
-- Summarize a busy dashboard into a few sentences for a status update.
-- Line up a metric change with recent deploys or config changes to point at a likely cause.
+- Metrics: get a PromQL query from plain language, get a spike explained, summarize a dashboard.
+- Logs: turn thousands of noisy lines into a short summary, group errors by cause, search by describing what you want.
+- Traces: point to the slow span and explain why the request was slow.
+- Together: one plain summary of metrics, logs, and traces during an incident.
 
-### Logs
-
-- Turn thousands of noisy log lines into a short summary of what actually went wrong.
-- Group similar errors together so you see three real problems instead of three thousand lines.
-- Search logs by describing what you want, instead of memorizing query syntax.
-- Pull the useful fields out of messy, unstructured logs.
-
-### Traces
-
-- Point to the slow span in a distributed trace and explain why the request was slow.
-- Follow a request across services and summarize where the time went.
-- Connect a slow trace to the metric or log that explains it.
-
-### Putting it together
-
-The real win is an assistant that reads metrics, logs, and traces at the same time and gives you one plain summary during an incident. Think of it as a fast junior engineer who reads everything and hands you a clear briefing. You still make the call.
-
-A safe way to start: keep it read-only. Let the AI look at your observability data and explain it. Do not give it permission to change anything yet.
+For the full version with example prompts and clear limits, read [Using AI to watch your systems](docs/monitoring.md). A safe way to start: keep it read-only. Let the AI look at your observability data and explain it. Do not give it permission to change anything yet.
 
 ## 3. Alerts and incidents
 
 Trust level: Gate. AI helps the on-call person; the on-call person stays in control.
 
-- Enrich an alert with context: recent deploys, past similar incidents, and the matching runbook.
+- Enrich an alert with context: recent deploys, past similar incidents, and the matching runbook. See the [alert prompt](prompts/explain-an-alert.md).
 - Suggest a first set of things to check, in priority order.
-- Offer possible causes with the evidence behind them, not a single confident guess.
-- Draft a blameless incident timeline and postmortem for a person to edit and finish.
+- Offer possible causes with the evidence behind them, not a single confident guess. See the [triage prompt](prompts/incident-triage.md).
+- Draft a blameless incident timeline and postmortem for a person to edit and finish. See the [postmortem prompt](prompts/draft-a-postmortem.md).
 
 The goal is a calmer 3 a.m. The AI does the gathering and drafting. The human decides and acts.
 
@@ -95,7 +96,7 @@ The goal is a calmer 3 a.m. The AI does the gathering and drafting. The human de
 
 Trust level: Gate. This is the sweet spot, because a pull request is a natural place to keep a human in the loop.
 
-- Add AI review to pull requests: a plain-language summary of the change and its risks.
+- Add AI review to pull requests: a plain-language summary of the change and its risks. See the [example workflow](examples/ai-pr-review-github-action.md).
 - Generate tests and test data for new code.
 - Turn a pile of vulnerability findings into a short, ranked, explained list.
 - Let AI fix things through Git, not through direct access. Instead of running commands on the cluster, it opens a pull request to your GitOps repo. Argo CD or Flux applies the change after a person merges it.
@@ -129,7 +130,7 @@ The part most guides skip. This is where your security and platform experience m
 
 A short, honest list. These are starting points, not endorsements. Check each one against your own needs.
 
-- k8sgpt: scans a Kubernetes cluster and explains what is wrong in plain language.
+- k8sgpt: scans a Kubernetes cluster and explains what is wrong in plain language. See the [quickstart](examples/k8sgpt-quickstart.md).
 - HolmesGPT (Robusta): helps investigate alerts and incidents.
 - Keep: open-source alert management with some AI features.
 - Ollama and vLLM: run models locally when you cannot send data to a hosted API.
@@ -156,14 +157,15 @@ A short, honest list. These are starting points, not endorsements. Check each on
 Contributions are very welcome. You can:
 
 - Add a tool, resource, or short guide under the right section.
+- Add a prompt to the [prompt library](prompts/README.md).
 - Tag any tool with a trust level (Assist, Gate, or Auto) and one line on where the human stays in control.
 - Keep it practical. Real, tested advice beats hype.
 
-See CONTRIBUTING.md for details.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
 
-Content is licensed under CC BY 4.0. Any code samples are MIT licensed. See LICENSE.
+Content is licensed under CC BY 4.0. Any code samples are MIT licensed. See [LICENSE](LICENSE).
 
 ## Maintainer
 
