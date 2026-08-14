@@ -1,0 +1,13 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Python (for any future examples)
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
