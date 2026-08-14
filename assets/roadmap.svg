@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="1140" viewBox="0 0 860 1140" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="860" height="1140" rx="14" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+
+  <text x="430" y="46" text-anchor="middle" font-size="26" font-weight="700" fill="#1f2328">AI for DevOps: A Practical Roadmap</text>
+  <text x="430" y="74" text-anchor="middle" font-size="14" fill="#57606a">Start with Assist. Move to Gate as you build trust. Treat Auto as the exception.</text>
+
+  <!-- spine -->
+  <line x1="430" y1="100" x2="430" y2="980" stroke="#c9d1d9" stroke-width="2"/>
+
+  <!-- Stage 0 -->
+  <g>
+    <rect x="130" y="102" width="600" height="86" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="160" y="134" font-size="16" font-weight="700" fill="#1f2328">Stage 0. DevOps Foundations</text>
+    <text x="160" y="158" font-size="13" fill="#57606a">The skills this roadmap builds on: Linux, Git, containers, Kubernetes, CI/CD, IaC, observability.</text>
+    <rect x="600" y="118" width="106" height="22" rx="11" fill="#eaeef2"/>
+    <text x="653" y="133" text-anchor="middle" font-size="11" font-weight="600" fill="#57606a">Prerequisite</text>
+  </g>
+
+  <!-- Stage 1 -->
+  <g>
+    <rect x="130" y="230" width="600" height="86" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="160" y="262" font-size="16" font-weight="700" fill="#1f2328">Stage 1. AI and LLM Foundations</text>
+    <text x="160" y="286" font-size="13" fill="#57606a">Enough to use AI well: prompting, RAG, tool calling, agents, MCP, and the failure modes.</text>
+    <rect x="618" y="246" width="88" height="22" rx="11" fill="#eaeef2"/>
+    <text x="662" y="261" text-anchor="middle" font-size="11" font-weight="600" fill="#57606a">Learn</text>
+  </g>
+
+  <!-- Stage 2 -->
+  <g>
+    <rect x="130" y="358" width="600" height="86" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="160" y="390" font-size="16" font-weight="700" fill="#1f2328">Stage 2. AI-Assisted Daily Ops</text>
+    <text x="160" y="414" font-size="13" fill="#57606a">Write IaC, policies, and docs. Explain logs and errors. You review everything.</text>
+    <rect x="626" y="374" width="80" height="22" rx="11" fill="#dafbe1"/>
+    <text x="666" y="389" text-anchor="middle" font-size="11" font-weight="700" fill="#1a7f37">Assist</text>
+  </g>
+
+  <!-- Stage 3 -->
+  <g>
+    <rect x="130" y="486" width="600" height="86" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="160" y="518" font-size="16" font-weight="700" fill="#1f2328">Stage 3. AI in CI/CD and GitOps</text>
+    <text x="160" y="542" font-size="13" fill="#57606a">AI opens a pull request, policy checks run, a person merges. The AI's only tools are Git.</text>
+    <rect x="632" y="502" width="74" height="22" rx="11" fill="#fff8c5"/>
+    <text x="669" y="517" text-anchor="middle" font-size="11" font-weight="700" fill="#9a6700">Gate</text>
+  </g>
+
+  <!-- Stage 4 -->
+  <g>
+    <rect x="130" y="614" width="600" height="86" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="160" y="646" font-size="16" font-weight="700" fill="#1f2328">Stage 4. AIOps and Incident Response</text>
+    <text x="160" y="670" font-size="13" fill="#57606a">Triage alerts, suggest causes, draft postmortems. The on-call person stays in control.</text>
+    <rect x="632" y="630" width="74" height="22" rx="11" fill="#fff8c5"/>
+    <text x="669" y="645" text-anchor="middle" font-size="11" font-weight="700" fill="#9a6700">Gate</text>
+  </g>
+
+  <!-- Stage 5 -->
+  <g>
+    <rect x="130" y="742" width="600" height="86" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="160" y="774" font-size="16" font-weight="700" fill="#1f2328">Stage 5. Build Your Own AI Helpers</text>
+    <text x="160" y="798" font-size="13" fill="#57606a">Agents, tools and MCP, RAG over your runbooks, guardrails, and testing your prompts.</text>
+    <rect x="626" y="758" width="80" height="22" rx="11" fill="#eaeef2"/>
+    <text x="666" y="773" text-anchor="middle" font-size="11" font-weight="600" fill="#57606a">Build</text>
+  </g>
+
+  <!-- Stage 6 -->
+  <g>
+    <rect x="130" y="870" width="600" height="86" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="160" y="902" font-size="16" font-weight="700" fill="#1f2328">Stage 6. Production, Safety and Governance</text>
+    <text x="160" y="926" font-size="13" fill="#57606a">Least privilege, policy gating, audit trails, cost control, and knowing when not to use AI.</text>
+    <rect x="614" y="886" width="92" height="22" rx="11" fill="#eaeef2"/>
+    <text x="660" y="901" text-anchor="middle" font-size="11" font-weight="600" fill="#57606a">Secure</text>
+  </g>
+
+  <!-- Legend -->
+  <g>
+    <rect x="130" y="1000" width="600" height="104" rx="10" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="150" y="1028" font-size="14" font-weight="700" fill="#1f2328">Trust levels</text>
+
+    <rect x="150" y="1044" width="70" height="22" rx="11" fill="#dafbe1"/>
+    <text x="185" y="1059" text-anchor="middle" font-size="11" font-weight="700" fill="#1a7f37">Assist</text>
+    <text x="232" y="1059" font-size="12" fill="#57606a">AI drafts, a person does everything.</text>
+
+    <rect x="150" y="1074" width="70" height="22" rx="11" fill="#fff8c5"/>
+    <text x="185" y="1089" text-anchor="middle" font-size="11" font-weight="700" fill="#9a6700">Gate</text>
+    <text x="232" y="1089" font-size="12" fill="#57606a">AI acts, but a review or policy check stands before production.</text>
+
+    <rect x="470" y="1044" width="70" height="22" rx="11" fill="#ffebe9"/>
+    <text x="505" y="1059" text-anchor="middle" font-size="11" font-weight="700" fill="#cf222e">Auto</text>
+    <text x="552" y="1059" font-size="12" fill="#57606a">Only after it earns trust.</text>
+  </g>
+</svg>
