@@ -9,42 +9,33 @@
       <stop offset="0.5" stop-color="#0ea5e9"/>
       <stop offset="1" stop-color="#14b8a6"/>
     </linearGradient>
-    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="4" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08"/>
-    </filter>
   </defs>
 
-  <rect x="0" y="0" width="880" height="1180" rx="16" fill="url(#bg)" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect x="0.75" y="0.75" width="878.5" height="1178.5" rx="16" fill="url(#bg)" stroke="#e2e8f0" stroke-width="1.5"/>
 
   <text x="440" y="52" text-anchor="middle" font-size="27" font-weight="700" fill="#0f172a">AI for DevOps: A Practical Roadmap</text>
   <text x="440" y="80" text-anchor="middle" font-size="14" fill="#64748b">Start with Assist. Move to Gate as you build trust. Treat Auto as the exception.</text>
 
-  <!-- spine -->
+  <!-- spine base and animated gradient -->
   <line x1="95" y1="150" x2="95" y2="926" stroke="#e2e8f0" stroke-width="6" stroke-linecap="round"/>
   <line x1="95" y1="150" x2="95" y2="926" stroke="url(#spine)" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 10">
     <animate attributeName="stroke-dashoffset" values="0;-48" dur="1.6s" repeatCount="indefinite"/>
   </line>
 
-  <!-- traveling pulse -->
-  <circle r="8" fill="#6366f1" filter="url(#glow)">
-    <animate attributeName="cx" values="95;95" dur="5s" repeatCount="indefinite"/>
-    <animate attributeName="cy" values="150;926;150" keyTimes="0;0.5;1" dur="6s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="6s" repeatCount="indefinite"/>
-  </circle>
-
-  <!-- stages -->
-  <!-- helper pattern per stage: number node on spine, connector, card, badge -->
+  <!-- traveling pulse: halo plus core, no filters -->
+  <g>
+    <circle cx="0" cy="0" r="13" fill="#6366f1" opacity="0.2"/>
+    <circle cx="0" cy="0" r="6" fill="#6366f1"/>
+    <animateTransform attributeName="transform" type="translate" values="95 150; 95 926; 95 150" keyTimes="0;0.5;1" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.88;1" dur="6s" repeatCount="indefinite"/>
+  </g>
 
   <!-- Stage 0 -->
-  <g filter="url(#shadow)">
-    <circle cx="95" cy="154" r="15" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="95" y="159" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">0</text>
+  <g>
     <line x1="110" y1="154" x2="140" y2="154" stroke="#cbd5e1" stroke-width="2"/>
     <rect x="140" y="108" width="660" height="92" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <circle cx="95" cy="154" r="15" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="95" y="159" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">0</text>
     <text x="164" y="142" font-size="16" font-weight="700" fill="#0f172a">DevOps Foundations</text>
     <text x="164" y="166" font-size="12.5" fill="#64748b">The skills this builds on: Linux, Git, containers, Kubernetes, CI/CD, IaC, observability.</text>
     <rect x="686" y="124" width="98" height="22" rx="11" fill="#f1f5f9"/>
@@ -52,11 +43,11 @@
   </g>
 
   <!-- Stage 1 -->
-  <g filter="url(#shadow)">
-    <circle cx="95" cy="282" r="15" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="95" y="287" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">1</text>
+  <g>
     <line x1="110" y1="282" x2="140" y2="282" stroke="#cbd5e1" stroke-width="2"/>
     <rect x="140" y="236" width="660" height="92" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <circle cx="95" cy="282" r="15" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="95" y="287" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">1</text>
     <text x="164" y="270" font-size="16" font-weight="700" fill="#0f172a">AI and LLM Foundations</text>
     <text x="164" y="294" font-size="12.5" fill="#64748b">Enough to use AI well: prompting, RAG, tool calling, agents, MCP, and the failure modes.</text>
     <rect x="712" y="252" width="72" height="22" rx="11" fill="#f1f5f9"/>
@@ -64,11 +55,11 @@
   </g>
 
   <!-- Stage 2 -->
-  <g filter="url(#shadow)">
-    <circle cx="95" cy="410" r="15" fill="#ffffff" stroke="#86efac" stroke-width="2"/>
-    <text x="95" y="415" text-anchor="middle" font-size="13" font-weight="700" fill="#15803d">2</text>
+  <g>
     <line x1="110" y1="410" x2="140" y2="410" stroke="#cbd5e1" stroke-width="2"/>
     <rect x="140" y="364" width="660" height="92" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <circle cx="95" cy="410" r="15" fill="#ffffff" stroke="#86efac" stroke-width="2"/>
+    <text x="95" y="415" text-anchor="middle" font-size="13" font-weight="700" fill="#15803d">2</text>
     <text x="164" y="398" font-size="16" font-weight="700" fill="#0f172a">AI-Assisted Daily Ops</text>
     <text x="164" y="422" font-size="12.5" fill="#64748b">Write IaC, policies, and docs. Explain logs and errors. You review everything.</text>
     <rect x="706" y="380" width="78" height="22" rx="11" fill="#dcfce7"/>
@@ -76,11 +67,11 @@
   </g>
 
   <!-- Stage 3 -->
-  <g filter="url(#shadow)">
-    <circle cx="95" cy="538" r="15" fill="#ffffff" stroke="#fcd34d" stroke-width="2"/>
-    <text x="95" y="543" text-anchor="middle" font-size="13" font-weight="700" fill="#a16207">3</text>
+  <g>
     <line x1="110" y1="538" x2="140" y2="538" stroke="#cbd5e1" stroke-width="2"/>
     <rect x="140" y="492" width="660" height="92" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <circle cx="95" cy="538" r="15" fill="#ffffff" stroke="#fcd34d" stroke-width="2"/>
+    <text x="95" y="543" text-anchor="middle" font-size="13" font-weight="700" fill="#a16207">3</text>
     <text x="164" y="526" font-size="16" font-weight="700" fill="#0f172a">AI in CI/CD and GitOps</text>
     <text x="164" y="550" font-size="12.5" fill="#64748b">AI opens a pull request, policy checks run, a person merges. Its only tools are Git.</text>
     <rect x="712" y="508" width="72" height="22" rx="11" fill="#fef9c3"/>
@@ -88,11 +79,11 @@
   </g>
 
   <!-- Stage 4 -->
-  <g filter="url(#shadow)">
-    <circle cx="95" cy="666" r="15" fill="#ffffff" stroke="#fcd34d" stroke-width="2"/>
-    <text x="95" y="671" text-anchor="middle" font-size="13" font-weight="700" fill="#a16207">4</text>
+  <g>
     <line x1="110" y1="666" x2="140" y2="666" stroke="#cbd5e1" stroke-width="2"/>
     <rect x="140" y="620" width="660" height="92" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <circle cx="95" cy="666" r="15" fill="#ffffff" stroke="#fcd34d" stroke-width="2"/>
+    <text x="95" y="671" text-anchor="middle" font-size="13" font-weight="700" fill="#a16207">4</text>
     <text x="164" y="654" font-size="16" font-weight="700" fill="#0f172a">AIOps and Incident Response</text>
     <text x="164" y="678" font-size="12.5" fill="#64748b">Triage alerts, suggest causes, draft postmortems. The on-call person stays in control.</text>
     <rect x="712" y="636" width="72" height="22" rx="11" fill="#fef9c3"/>
@@ -100,11 +91,11 @@
   </g>
 
   <!-- Stage 5 -->
-  <g filter="url(#shadow)">
-    <circle cx="95" cy="794" r="15" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="95" y="799" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">5</text>
+  <g>
     <line x1="110" y1="794" x2="140" y2="794" stroke="#cbd5e1" stroke-width="2"/>
     <rect x="140" y="748" width="660" height="92" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <circle cx="95" cy="794" r="15" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="95" y="799" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">5</text>
     <text x="164" y="782" font-size="16" font-weight="700" fill="#0f172a">Build Your Own AI Helpers</text>
     <text x="164" y="806" font-size="12.5" fill="#64748b">Agents, tools and MCP, RAG over your runbooks, guardrails, and testing your prompts.</text>
     <rect x="710" y="764" width="74" height="22" rx="11" fill="#f1f5f9"/>
@@ -112,11 +103,11 @@
   </g>
 
   <!-- Stage 6 -->
-  <g filter="url(#shadow)">
-    <circle cx="95" cy="922" r="15" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="95" y="927" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">6</text>
+  <g>
     <line x1="110" y1="922" x2="140" y2="922" stroke="#cbd5e1" stroke-width="2"/>
     <rect x="140" y="876" width="660" height="92" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <circle cx="95" cy="922" r="15" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="95" y="927" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">6</text>
     <text x="164" y="910" font-size="16" font-weight="700" fill="#0f172a">Production, Safety and Governance</text>
     <text x="164" y="934" font-size="12.5" fill="#64748b">Least privilege, policy gating, audit trails, cost control, and knowing when not to use AI.</text>
     <rect x="708" y="892" width="76" height="22" rx="11" fill="#f1f5f9"/>
@@ -124,7 +115,7 @@
   </g>
 
   <!-- Legend -->
-  <g filter="url(#shadow)">
+  <g>
     <rect x="140" y="1004" width="660" height="120" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
     <text x="164" y="1034" font-size="14" font-weight="700" fill="#0f172a">Trust levels</text>
 

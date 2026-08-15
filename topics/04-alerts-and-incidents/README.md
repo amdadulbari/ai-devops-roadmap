@@ -57,9 +57,10 @@ Keep it blameless. The draft should focus on systems and process, not people. Yo
 
 ## Tools to look at
 
-- HolmesGPT (Robusta) helps investigate alerts and incidents.
-- k8sgpt explains what is wrong in a Kubernetes cluster. See the [quickstart](../../examples/k8sgpt-quickstart.md).
-- Keep is open-source alert management with some AI features.
+- [HolmesGPT](https://github.com/robusta-dev/holmesgpt) helps investigate alerts and incidents.
+- [k8sgpt](https://github.com/k8sgpt-ai/k8sgpt) explains what is wrong in a Kubernetes cluster. See the [quickstart](../../examples/k8sgpt-quickstart.md).
+- [Keep](https://github.com/keephq/keep) is open-source alert management with some AI features.
+- [n8n](https://github.com/n8n-io/n8n) lets you build an incident workflow, for example alert to AI enrichment to Slack, with a human-approval step before any action. This is a clean way to keep the Gate level.
 
 See the full [tools catalog](../../tools/README.md).
 

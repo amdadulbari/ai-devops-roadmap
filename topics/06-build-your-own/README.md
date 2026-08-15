@@ -30,7 +30,11 @@ RAG, retrieval-augmented generation, means fetching your relevant docs, runbooks
 
 ### MCP for connecting tools
 
-MCP, the Model Context Protocol, is a common way to expose tools and data to models. If you expose your tools through MCP, many AI apps can use them. Expose read-only tools first. Be very careful before you expose anything that changes state.
+[MCP, the Model Context Protocol](https://modelcontextprotocol.io), is a common way to expose tools and data to models. If you expose your tools through MCP, many AI apps can use them. Expose read-only tools first. Be very careful before you expose anything that changes state.
+
+### Tools that help you build
+
+You do not have to start from scratch. [LangChain](https://github.com/langchain-ai/langchain) and [LlamaIndex](https://github.com/run-llama/llama_index) help with tools and RAG. [LangGraph](https://github.com/langchain-ai/langgraph) makes approval steps explicit as part of the graph. For a visual start, [n8n](https://github.com/n8n-io/n8n) and [Flowise](https://github.com/FlowiseAI/Flowise) let you build and test a flow, with a human-approval step, before you write code. See the full [tools catalog](../../tools/README.md).
 
 ## Design the gate first, not last
 
