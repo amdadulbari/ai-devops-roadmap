@@ -14,7 +14,21 @@ This is written from day-to-day platform engineering: Kubernetes, GitOps, policy
 
 - [Getting started](docs/getting-started.md): a short first-step path, even if you have never used AI at work.
 - [Prompt library](prompts/README.md): ready-to-use prompts you can try on real work today.
-- [Using AI to watch your systems](docs/monitoring.md): a deep dive on metrics, logs, and traces.
+- [Using AI to watch your systems](topics/03-monitoring/README.md): a deep dive on metrics, logs, and traces.
+
+## Browse by topic
+
+Each topic is its own folder with a focused guide. Full index in [topics](topics/README.md).
+
+| Topic | What it covers | Trust level |
+|-------|----------------|-------------|
+| [1. AI foundations](topics/01-ai-foundations/README.md) | Enough about AI and LLMs to use them well and know their limits | Learn |
+| [2. Everyday ops](topics/02-everyday-ops/README.md) | Write IaC and policies, explain errors, draft docs | Assist |
+| [3. Monitoring](topics/03-monitoring/README.md) | Use AI for metrics, logs, and traces | Assist to Gate |
+| [4. Alerts and incidents](topics/04-alerts-and-incidents/README.md) | Triage alerts, help the on-call, draft postmortems | Gate |
+| [5. CI/CD and GitOps](topics/05-cicd-and-gitops/README.md) | AI in pull requests, tests, and GitOps changes | Gate |
+| [6. Build your own helpers](topics/06-build-your-own/README.md) | Agents, tools, RAG, guardrails, and LLMOps | Build |
+| [7. Production safety](topics/07-production-safety/README.md) | Least privilege, policy gating, audit, and cost | Secure |
 
 ## Who this is for
 
@@ -38,11 +52,12 @@ Start at Assist. Move to Gate as you build confidence. Treat Auto as the rare ex
 
 ## What is in this repo
 
-- The roadmap below: seven stages, from foundations to production safety.
+- [topics](topics/README.md): the seven topic guides, one folder each, from foundations to production safety.
 - [prompts](prompts/README.md): a library of ready-to-use prompts for common DevOps tasks.
-- [docs/monitoring.md](docs/monitoring.md): a deep dive on using AI for metrics, logs, and traces.
-- [docs/getting-started.md](docs/getting-started.md): the first steps and the two habits that keep you safe.
 - [examples](examples/README.md): small, safe examples you can learn from and adapt.
+- [tools](tools/README.md): a curated catalog of AI-for-DevOps tools, each with a trust level.
+- [glossary](glossary/README.md): plain-language definitions of the AI terms in this roadmap.
+- [docs/getting-started.md](docs/getting-started.md): the first steps and the two habits that keep you safe.
 
 ## The roadmap
 
@@ -79,7 +94,7 @@ Short version:
 - Traces: point to the slow span and explain why the request was slow.
 - Together: one plain summary of metrics, logs, and traces during an incident.
 
-For the full version with example prompts and clear limits, read [Using AI to watch your systems](docs/monitoring.md). A safe way to start: keep it read-only. Let the AI look at your observability data and explain it. Do not give it permission to change anything yet.
+For the full version with example prompts and clear limits, read [topic 3: monitoring](topics/03-monitoring/README.md). A safe way to start: keep it read-only. Let the AI look at your observability data and explain it. Do not give it permission to change anything yet.
 
 ## 3. Alerts and incidents
 

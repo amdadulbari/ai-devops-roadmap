@@ -7,7 +7,7 @@ This page helps you take the first step, even if you have never used AI in your 
 Match your situation to a starting point:
 
 - New to using AI at work: start with the [prompt library](../prompts/README.md). Try the logs summary or the PromQL prompt on a real task today.
-- Already using AI to read logs and write config: read the [monitoring guide](monitoring.md), then look at Stage 3 in the main roadmap (AI in CI/CD and GitOps).
+- Already using AI to read logs and write config: read the [monitoring guide](../topics/03-monitoring/README.md), then look at Stage 3 in the main roadmap (AI in CI/CD and GitOps).
 - Ready to build your own tools: jump to Stage 5 and Stage 6 in the main [README](../README.md).
 
 ## Choose how you will run models

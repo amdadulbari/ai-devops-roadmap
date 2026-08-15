@@ -1,8 +1,8 @@
-# Using AI to watch your systems: metrics, logs, and traces
+# Topic 3: Monitoring
 
 This is the part of DevOps where AI saves the most time day to day. You are buried in signals from Prometheus, your logs, and your traces. AI is good at reading a lot of that fast and explaining it in plain words. You stay in charge of what to do next.
 
-This guide goes deeper than the main roadmap. It gives concrete ways to use AI for each type of signal, with example prompts, and clear limits.
+Trust level: Assist to Gate.
 
 The golden rule for monitoring: start read-only. Let the AI look at your data and explain it. Do not give it permission to change anything until you trust it on the reading job first.
 
@@ -21,7 +21,7 @@ Metrics tell you the shape of your system over time: request rates, error rates,
 
 Ways AI helps:
 
-- Write a PromQL query from a plain description, so you do not have to remember the syntax. Always check the query before you run it. See the [prompt](../prompts/natural-language-to-promql.md).
+- Write a PromQL query from a plain description, so you do not have to remember the syntax. Always check the query before you run it. See the [prompt](../../prompts/natural-language-to-promql.md).
 - Explain a spike or a drop. Paste the metric and a short description of the time window, and ask what changed and when.
 - Summarize a busy dashboard into a few sentences for a status update.
 - Line up a metric change with recent deploys or config changes to point at a likely cause. You still confirm the link.
@@ -46,7 +46,7 @@ Logs are where the detail lives, and also where the noise lives. A single proble
 
 Ways AI helps:
 
-- Turn a wall of logs into a short summary of what went wrong. See the [prompt](../prompts/logs-to-summary.md).
+- Turn a wall of logs into a short summary of what went wrong. See the [prompt](../../prompts/logs-to-summary.md).
 - Group similar errors by root cause, so three real problems do not look like three thousand lines.
 - Search logs by describing what you want, instead of memorizing query syntax for your log tool.
 - Pull structured fields out of messy, unstructured log lines.
@@ -72,7 +72,7 @@ Traces show the path of a single request across services. They are the best tool
 
 Ways AI helps:
 
-- Point to the slow span and explain why the request was slow. See the [prompt](../prompts/explain-a-trace.md).
+- Point to the slow span and explain why the request was slow. See the [prompt](../../prompts/explain-a-trace.md).
 - Follow a request across services and summarize where the time went.
 - Connect a slow trace to the metric or log that explains it.
 
@@ -99,7 +99,7 @@ A simple flow that works:
 3. Add a trace of a slow or failed request if you have one.
 4. Ask for one summary: what is happening, the most likely cause, and what to check next. Read-only checks only.
 
-You get a fast, plain-language starting point. You keep control of every action.
+You get a fast, plain-language starting point. You keep control of every action. For the incident side of this, see [topic 4](../04-alerts-and-incidents/README.md).
 
 ## What AI is good at, and what it is not
 
@@ -119,12 +119,14 @@ Not good at, or not safe for:
 
 ## A safe setup to start with
 
-If you want to try this without risk:
-
 1. Pick one service you know well.
 2. Give the AI read-only access to its metrics, logs, and traces, or just paste the data by hand at first.
 3. Use it during a real but low-pressure investigation.
 4. Check every claim it makes against the real system.
-5. Once it reliably helps you read faster, then think about the next step, which is the Gate level in the main roadmap.
+5. Once it reliably helps you read faster, then think about the next step, which is the Gate level.
 
 The point is simple. Let AI help you read and understand your systems first. Earn trust there before you let it do anything else.
+
+## Next
+
+Go to [topic 4: alerts and incidents](../04-alerts-and-incidents/README.md), or back to [all topics](../README.md).
