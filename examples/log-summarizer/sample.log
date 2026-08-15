@@ -1,0 +1,17 @@
+2026-08-15T14:31:02Z INFO  checkout-service starting, version 1.4.2
+2026-08-15T14:31:02Z INFO  connecting to database at postgres.db.svc:5432
+2026-08-15T14:31:12Z WARN  database connection attempt 1 failed: dial tcp 10.0.4.11:5432: i/o timeout
+2026-08-15T14:31:22Z WARN  database connection attempt 2 failed: dial tcp 10.0.4.11:5432: i/o timeout
+2026-08-15T14:31:32Z WARN  database connection attempt 3 failed: dial tcp 10.0.4.11:5432: i/o timeout
+2026-08-15T14:31:32Z ERROR could not establish database connection after 3 attempts
+2026-08-15T14:31:32Z INFO  starting in degraded mode, serving cached data only
+2026-08-15T14:32:05Z INFO  handled 320 requests from cache
+2026-08-15T14:33:10Z WARN  cache size 480MB approaching limit 512MB
+2026-08-15T14:33:41Z WARN  request queue depth 1200, above threshold 1000
+2026-08-15T14:33:58Z WARN  cache size 511MB approaching limit 512MB
+2026-08-15T14:34:02Z ERROR handler panic: runtime error: invalid memory address or nil pointer dereference
+2026-08-15T14:34:02Z ERROR goroutine stack: checkout.(*Cart).Total(cart.go:88)
+2026-08-15T14:34:11Z ERROR handler panic: runtime error: invalid memory address or nil pointer dereference
+2026-08-15T14:34:20Z FATAL out of memory, process killed by oom-killer
+2026-08-15T14:34:21Z INFO  checkout-service restarting, version 1.4.2
+2026-08-15T14:34:31Z WARN  database connection attempt 1 failed: dial tcp 10.0.4.11:5432: i/o timeout
