@@ -7,7 +7,7 @@ Most guides show you flashy AI demos. This one answers the question you actually
 This is written from day-to-day platform engineering: Kubernetes, GitOps, policy as code, and observability. It is meant to be useful whether you are just starting with AI or already building tools with it.
 
 <p align="center">
-  <img src="assets/roadmap.svg" alt="AI for DevOps roadmap: six stages from foundations to production safety, with Assist, Gate, and Auto trust levels" width="720">
+  <img src="assets/roadmap.svg" alt="AI for DevOps roadmap: seven stages from foundations to production safety, with Assist, Gate, and Auto trust levels" width="840">
 </p>
 
 ## New here? Start with these
