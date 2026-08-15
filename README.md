@@ -160,6 +160,44 @@ A short, honest list. These are starting points, not endorsements. Check each on
 - Running an agent with broad, standing credentials.
 - Having no record of what the AI did and why.
 
+## FAQ
+
+### Will AI hallucinate and make a bad change?
+
+It can produce confident, wrong output. That is exactly why this roadmap keeps a human or a policy check in front of anything that changes production. At the Assist and Gate levels, a wrong draft is caught in review before it can do harm.
+
+### Is this safe for production?
+
+It is as safe as the gates you put around it. The whole approach is to let AI draft and explain, and to keep people and policy in control of actions. See [topic 7 on production safety](topics/07-production-safety/README.md).
+
+### What does it cost?
+
+You usually pay per token, so cost depends on how much text you send and which model you use. Start with a small, cheap model and use a larger one only when you need it. Set spending limits, and watch out for agents in a loop, which can run up cost fast.
+
+### Do I have to send my data to a third party?
+
+No. For anything sensitive, run a model locally with a tool like Ollama or vLLM, so your data stays on your own machine. Use hosted models only where the input is safe to share, and never paste secrets or customer data into them.
+
+### Which model should I use?
+
+Start with whatever is easy, and try the smallest model that does the job. Move to a larger one only for tasks where the small one clearly falls short. Match the choice to your data rules too: local models for sensitive data.
+
+### Do I need to build my own tools?
+
+No. Start by using existing tools and the prompt library. Build your own only when you have a specific need that off-the-shelf tools do not meet. See the [tools catalog](tools/README.md).
+
+### Does this replace DevOps or SRE engineers?
+
+No. It removes some of the slow reading and drafting, so engineers spend more time on judgment and decisions. The human stays in charge of every action that matters.
+
+### Will this work with my existing stack?
+
+Yes. The approach is built around common tools: Kubernetes, GitOps with Argo CD or Flux, policy engines like Kyverno and OPA, and observability like Prometheus and OpenTelemetry. AI fits alongside them. It does not replace them.
+
+### Where should I start?
+
+Read [getting started](docs/getting-started.md), then try one prompt from the library on real work today. Grow one trust level at a time.
+
 ## How to use this roadmap
 
 1. Find your level. Already shipping infrastructure code every day? Start at section 4. Building tools? Jump to section 5.
@@ -181,9 +219,5 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 ## License
 
 Content is licensed under CC BY 4.0. Any code samples are MIT licensed. See [LICENSE](LICENSE).
-
-## Maintainer
-
-Maintained by Amdadul Bari Imad, a DevOps and platform engineer. Site: https://amdadulbari.com
 
 If this helped you use AI at work without losing sleep, a star helps other people find it.
