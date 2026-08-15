@@ -173,7 +173,7 @@ It is as safe as the gates you put around it. The whole approach is to let AI dr
 
 ### What does it cost?
 
-You usually pay per token, so cost depends on how much text you send and which model you use. Start with a small, cheap model and use a larger one only when you need it. Set spending limits, and watch out for agents in a loop, which can run up cost fast.
+You usually pay per token, so cost depends on how much text you send and which model you use. Start with a small, cheap model and use a larger one only when you need it. Set spending limits, and watch out for agents in a loop, which can run up cost fast. See [cost and choosing a model](docs/cost-and-model-selection.md) for a worked example and tips.
 
 ### Do I have to send my data to a third party?
 

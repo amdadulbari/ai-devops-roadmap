@@ -1,0 +1,32 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-team-label
+  annotations:
+    policies.kyverno.io/title: Require team label
+    policies.kyverno.io/category: Governance
+    policies.kyverno.io/severity: medium
+    policies.kyverno.io/subject: Deployment
+    policies.kyverno.io/description: >-
+      Every Deployment must carry a non-empty 'team' label, so ownership is clear
+      when something breaks.
+spec:
+  # Start in Audit so you can see what would be blocked without blocking it.
+  # Switch to Enforce once your existing workloads are clean.
+  # On Kyverno 1.11 and newer you can instead set failureAction under the rule.
+  validationFailureAction: Audit
+  background: true
+  rules:
+    - name: check-team-label
+      match:
+        any:
+          - resources:
+              kinds:
+                - Deployment
+      validate:
+        message: "The label 'team' is required on all Deployments."
+        pattern:
+          metadata:
+            labels:
+              # "?*" means the label must exist and not be empty.
+              team: "?*"

@@ -15,7 +15,7 @@ The AI has no power to change anything. Its only output is a comment.
 
 ## The workflow
 
-Save this as `.github/workflows/ai-review.yml` in your own repository. Read it fully and adjust it before use. You will need to add your model provider's API key as a repository secret, and install the small script or action you use to call the model.
+Save this as `.github/workflows/ai-review.yml` in your own repository. Read it fully and adjust it before use. You need to add your model provider's key as a repository secret named `AI_API_KEY` (Settings, then Secrets and variables, then Actions). The model call is included below and uses an OpenAI-compatible API with the Python that is already on the runner. To use a different provider, change the URL and model.
 
 ```yaml
 name: AI PR review
@@ -44,14 +44,36 @@ jobs:
           echo "created diff"
 
       - name: Ask the AI for a review
-        id: ai
         env:
-          MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_MODEL: gpt-4o-mini
         run: |
-          # Replace this step with your own call to a model.
-          # Send the contents of pr.diff plus a review prompt.
-          # Save the model's text response to review.md.
-          echo "Add your model call here" > review.md
+          python3 - <<'PY'
+          import json, os, urllib.request
+          diff = open("pr.diff", encoding="utf-8").read()[:12000]  # keep the request small
+          prompt = (
+              "You are a careful senior engineer reviewing a pull request for "
+              "infrastructure code.\n\nHere is the diff:\n" + diff + "\n\n"
+              "Summarize what it does, rate the risk, list anything unsafe or "
+              "missing, and ask any questions. Point to exact lines. Do not "
+              "approve or merge."
+          )
+          body = json.dumps({
+              "model": os.environ.get("AI_MODEL", "gpt-4o-mini"),
+              "messages": [{"role": "user", "content": prompt}],
+          }).encode()
+          req = urllib.request.Request(
+              "https://api.openai.com/v1/chat/completions",
+              data=body,
+              headers={
+                  "Content-Type": "application/json",
+                  "Authorization": "Bearer " + os.environ["AI_API_KEY"],
+              },
+          )
+          with urllib.request.urlopen(req) as r:
+              data = json.load(r)
+          open("review.md", "w", encoding="utf-8").write(data["choices"][0]["message"]["content"])
+          PY
 
       - name: Post the review as a comment
         uses: actions/github-script@v7
