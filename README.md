@@ -56,6 +56,7 @@ Start at Assist. Move to Gate as you build confidence. Treat Auto as the rare ex
 - [prompts](prompts/README.md): a library of ready-to-use prompts for common DevOps tasks.
 - [examples](examples/README.md): small, safe examples you can learn from and adapt.
 - [tools](tools/README.md): a curated catalog of AI-for-DevOps tools, each with a trust level.
+- [resources](resources/README.md): further reading, hand-picked articles, papers, and docs.
 - [glossary](glossary/README.md): plain-language definitions of the AI terms in this roadmap.
 - [docs/getting-started.md](docs/getting-started.md): the first steps and the two habits that keep you safe.
 
@@ -204,6 +205,10 @@ Read [getting started](docs/getting-started.md), then try one prompt from the li
 2. Move up one trust level at a time. Earn it with reliability.
 3. Pick one item, try it for real, then show a teammate how it worked.
 4. Use the safety notes as a checklist before anything touches production.
+
+## Further reading
+
+Want to go deeper? See [resources](resources/README.md) for a hand-picked list of articles, papers, and docs on how LLMs work, prompting, security, SRE foundations, and observability for AI.
 
 ## Contributing
 
