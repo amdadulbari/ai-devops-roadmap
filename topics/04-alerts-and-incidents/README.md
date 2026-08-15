@@ -4,6 +4,17 @@ Incidents are stressful and time-sensitive. This is exactly where a good assista
 
 Trust level: Gate.
 
+```mermaid
+flowchart LR
+    Al[Alert fires] --> AI[AI enriches and triages]
+    AI --> OC{On-call decides}
+    OC --> Act[Act]
+    Act --> PM[AI drafts postmortem]
+    PM --> Ed{You edit and own it}
+    classDef human fill:#fef9c3,stroke:#a16207,color:#0f172a;
+    class OC,Ed human
+```
+
 ## Before an incident: better alerts
 
 AI can help you tune alerts so there are fewer, better ones:

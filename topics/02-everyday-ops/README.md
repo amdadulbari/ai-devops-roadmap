@@ -4,6 +4,15 @@ This is where almost everyone should start using AI at work. The tasks here are 
 
 Trust level: Assist.
 
+```mermaid
+flowchart LR
+    D[You describe the task] --> AI[AI drafts IaC, policy, or docs]
+    AI --> Rv{You review}
+    Rv --> Ap[You apply]
+    classDef human fill:#fef9c3,stroke:#a16207,color:#0f172a;
+    class Rv human
+```
+
 ## Where AI helps every day
 
 ### Writing and cleaning up config

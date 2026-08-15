@@ -4,6 +4,16 @@ At some point you will want to build your own AI tools, not just use other peopl
 
 Trust level: Build carefully and test hard.
 
+```mermaid
+flowchart LR
+    Sig[Signal or request] --> Ag[Agent: tools + RAG]
+    Ag --> Prop[Proposed action]
+    Prop --> Gate{Human approval gate}
+    Gate --> Act[Action]
+    classDef human fill:#fef9c3,stroke:#a16207,color:#0f172a;
+    class Gate human
+```
+
 ## Start with the smallest useful thing
 
 Do not start by building an agent that can do everything. Start with one small, read-only helper that does one job, such as summarizing an alert with context from your runbooks. Get that reliable. Then grow.

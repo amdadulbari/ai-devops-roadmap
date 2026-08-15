@@ -6,6 +6,18 @@ Trust level: Assist to Gate.
 
 The golden rule for monitoring: start read-only. Let the AI look at your data and explain it. Do not give it permission to change anything until you trust it on the reading job first.
 
+```mermaid
+flowchart LR
+    Me[Metrics] --> AI[AI reads and summarizes]
+    Lo[Logs] --> AI
+    Tr[Traces] --> AI
+    AI --> S[Plain-language summary]
+    S --> C{You confirm}
+    C --> Act[You act]
+    classDef human fill:#fef9c3,stroke:#a16207,color:#0f172a;
+    class C human
+```
+
 ## Contents
 
 - [Metrics](#metrics)

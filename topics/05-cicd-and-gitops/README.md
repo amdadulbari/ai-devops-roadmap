@@ -4,6 +4,16 @@ This is the sweet spot for AI that changes things, because a pull request is a n
 
 Trust level: Gate.
 
+```mermaid
+flowchart LR
+    AI[AI proposes a change] --> Pol{Policy checks<br/>Kyverno, OPA}
+    Pol --> PR[Pull request]
+    PR --> Hu{Human reviews and merges}
+    Hu --> GO[Argo CD or Flux reconciles]
+    classDef human fill:#fef9c3,stroke:#a16207,color:#0f172a;
+    class Pol,Hu human
+```
+
 ## AI inside pull requests
 
 - Add an AI review step that posts a plain-language summary of the change and its risks. It comments only. It does not approve or merge. See the [example workflow](../../examples/ai-pr-review-github-action.md) and the [PR review prompt](../../prompts/review-a-pull-request.md).

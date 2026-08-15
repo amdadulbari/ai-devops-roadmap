@@ -4,6 +4,17 @@ You do not need to be a machine learning expert to use AI well in DevOps. You do
 
 Trust level: Learn. Nothing here changes your systems. It builds the base for everything that follows.
 
+```mermaid
+flowchart LR
+    Q[Your question] --> M[Model]
+    R[(Your runbooks and docs)] -->|RAG adds context| M
+    M --> A[Draft answer]
+    A --> V{You verify}
+    V --> U[Use it]
+    classDef human fill:#fef9c3,stroke:#a16207,color:#0f172a;
+    class V human
+```
+
 ## What a large language model is, in plain words
 
 A large language model, or LLM, is a program that predicts the next piece of text based on the text it has seen. It has read a huge amount of writing and learned the patterns. When you ask it something, it produces the most likely helpful continuation.

@@ -4,6 +4,20 @@ This is the part most guides skip, and it is where your security and platform ex
 
 Trust level: Secure. This applies to everything else in the roadmap.
 
+```mermaid
+flowchart LR
+    P[AI proposal] --> L[Least privilege]
+    L --> Po{Policy gate}
+    Po --> H{Human review}
+    H --> Ac[Action]
+    Ac --> Au[(Audit log)]
+    K[Kill switch] -. stops .-> Ac
+    classDef human fill:#fef9c3,stroke:#a16207,color:#0f172a;
+    classDef stop fill:#fee2e2,stroke:#b91c1c,color:#0f172a;
+    class Po,H human
+    class K stop
+```
+
 ## Least privilege for AI agents
 
 Treat an AI agent like any other account, and give it the least access it needs.
