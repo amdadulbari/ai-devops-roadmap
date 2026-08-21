@@ -8,7 +8,7 @@ How to use these:
 2. Replace the parts in angle brackets, like `<paste your logs here>`.
 3. Read the output carefully before you act on it. Treat it as a draft, not a decision.
 
-A safety reminder that applies to all of them: do not paste secrets, tokens, or customer data into a hosted model. Redact first, or use a model that runs on your own machine.
+A safety reminder that applies to all of them: do not paste secrets, tokens, or customer data into a hosted model. Redact first, or use a model that runs on your own machine. The [redact example](../examples/redact/README.md) is a small runnable tool that helps you strip secrets out of text before you send it.
 
 ## Prompts
 

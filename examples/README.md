@@ -6,6 +6,7 @@ These are teaching examples. Read them, understand them, and adjust them to your
 
 ## Available examples
 
+- [Redact before you send](redact/README.md): a small, runnable tool that strips secrets, tokens, and emails out of text before you paste it into a hosted model. Follows the one rule this roadmap repeats most. No packages to install.
 - [Log summarizer](log-summarizer/README.md): a small, runnable command-line tool that reads logs and asks a model to summarize them. Works with a local model or a hosted API. No packages to install.
 - [Kyverno policy: require a team label](kyverno-require-team-label/README.md): a real, testable policy you can validate offline with the Kyverno CLI. Shows the kind of policy AI can draft and how a policy gates AI-proposed changes.
 - [Prompt injection walkthrough](prompt-injection-walkthrough.md): a concrete attack and the design that prevents it. Read this before you let AI act.

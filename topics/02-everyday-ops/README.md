@@ -51,7 +51,7 @@ A chat assistant that answers questions about your systems is useful and safe wh
 
 ## The one rule that matters here
 
-Never paste secrets, tokens, or customer data into a hosted model. Redact first, or use a model that runs locally. This one habit prevents the most common and most serious mistake.
+Never paste secrets, tokens, or customer data into a hosted model. Redact first, or use a model that runs locally. This one habit prevents the most common and most serious mistake. For a runnable helper that strips secrets out of text before you send it, see the [redact example](../../examples/redact/README.md).
 
 ## How to build the habit
 
