@@ -147,7 +147,8 @@ The part most guides skip. This is where your security and platform experience m
 A short, honest list. These are starting points, not endorsements. Check each one against your own needs.
 
 - k8sgpt: scans a Kubernetes cluster and explains what is wrong in plain language. See the [quickstart](examples/k8sgpt-quickstart.md).
-- HolmesGPT (Robusta): helps investigate alerts and incidents.
+- kubectl-ai: turns plain-language requests into kubectl commands and explains the result. Keep it read-only while you learn to trust it.
+- HolmesGPT: a CNCF Sandbox SRE agent that investigates alerts and incidents across Kubernetes, VMs, and cloud.
 - Keep: open-source alert management with some AI features.
 - Ollama and vLLM: run models locally when you cannot send data to a hosted API.
 - LangChain and LlamaIndex: frameworks for building your own AI tools.

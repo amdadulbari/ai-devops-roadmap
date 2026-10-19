@@ -10,7 +10,8 @@ Trust levels: Assist means it drafts or explains. Gate means it acts behind a re
 
 | Tool | What it does | Trust |
 |------|--------------|-------|
-| [k8sgpt](https://github.com/k8sgpt-ai/k8sgpt) | Scans a cluster and explains problems in plain language. Read-only by default. | Assist |
+| [k8sgpt](https://github.com/k8sgpt-ai/k8sgpt) | Scans a cluster and explains problems in plain language. Read-only by default. A CNCF Sandbox project. | Assist |
+| [kubectl-ai](https://github.com/GoogleCloudPlatform/kubectl-ai) | Turns plain-language requests into kubectl commands, runs them, and explains the result. Model-agnostic. Keep it read-only or confirm before it runs anything. | Assist to Gate |
 
 See the [k8sgpt quickstart](../examples/k8sgpt-quickstart.md).
 
@@ -18,7 +19,7 @@ See the [k8sgpt quickstart](../examples/k8sgpt-quickstart.md).
 
 | Tool | What it does | Trust |
 |------|--------------|-------|
-| [HolmesGPT](https://github.com/robusta-dev/holmesgpt) | Investigates alerts and incidents by gathering context and suggesting causes. | Assist to Gate |
+| [HolmesGPT](https://github.com/HolmesGPT/holmesgpt) | Investigates alerts and incidents by gathering context and suggesting causes. Read-only by default, and works across Kubernetes, VMs, and cloud services. A CNCF Sandbox project. | Assist to Gate |
 | [Robusta](https://github.com/robusta-dev/robusta) | Kubernetes monitoring and automation, with enrichment for alerts. | Assist to Gate |
 
 ## Alerting and AIOps
@@ -47,6 +48,7 @@ For when you build your own helpers. See [topic 6](../topics/06-build-your-own/R
 | [LangGraph](https://github.com/langchain-ai/langgraph) | Build agent workflows as graphs, which makes approval steps explicit. | Build |
 | [LlamaIndex](https://github.com/run-llama/llama_index) | Focused on connecting your data to models, useful for RAG. | Build |
 | [CrewAI](https://github.com/crewAIInc/crewAI) | A framework for coordinating multiple agents on a task. | Build |
+| [kagent](https://github.com/kagent-dev/kagent) | Run and manage AI agents inside Kubernetes, built for platform and DevOps teams. A CNCF Sandbox project. | Build |
 
 ## Running models
 

@@ -34,7 +34,7 @@ RAG, retrieval-augmented generation, means fetching your relevant docs, runbooks
 
 ### Tools that help you build
 
-You do not have to start from scratch. [LangChain](https://github.com/langchain-ai/langchain) and [LlamaIndex](https://github.com/run-llama/llama_index) help with tools and RAG. [LangGraph](https://github.com/langchain-ai/langgraph) makes approval steps explicit as part of the graph. For a visual start, [n8n](https://github.com/n8n-io/n8n) and [Flowise](https://github.com/FlowiseAI/Flowise) let you build and test a flow, with a human-approval step, before you write code. See the full [tools catalog](../../tools/README.md).
+You do not have to start from scratch. [LangChain](https://github.com/langchain-ai/langchain) and [LlamaIndex](https://github.com/run-llama/llama_index) help with tools and RAG. [LangGraph](https://github.com/langchain-ai/langgraph) makes approval steps explicit as part of the graph. For a visual start, [n8n](https://github.com/n8n-io/n8n) and [Flowise](https://github.com/FlowiseAI/Flowise) let you build and test a flow, with a human-approval step, before you write code. If you want to run agents inside Kubernetes itself, [kagent](https://github.com/kagent-dev/kagent) is a cloud-native framework built for platform teams. See the full [tools catalog](../../tools/README.md).
 
 ## Design the gate first, not last
 
