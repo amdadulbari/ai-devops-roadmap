@@ -32,6 +32,13 @@ RAG, retrieval-augmented generation, means fetching your relevant docs, runbooks
 
 [MCP, the Model Context Protocol](https://modelcontextprotocol.io), is a common way to expose tools and data to models. If you expose your tools through MCP, many AI apps can use them. Expose read-only tools first. Be very careful before you expose anything that changes state.
 
+MCP has become the default answer to "how do I plug this tool into a model", so a few practical notes:
+
+- Pin a spec revision. [Revisions are named by date](https://modelcontextprotocol.io/specification), and the current one is 2026-07-28. Pin it and upgrade deliberately, the way you would any dependency.
+- Expect to do real authentication. Recent revisions lean on standard OAuth rather than a shared secret in a config file. That is more work up front and much better than a long-lived token in a dotfile.
+- There is an [official registry](https://registry.modelcontextprotocol.io) of public servers, still in preview. It is good for discovery, and it is not a safety review. See [topic 7](../07-production-safety/README.md) on treating a third-party server as code you are about to run.
+- Your internal servers do not belong in a public registry. Keep a list of the ones your team runs, who owns each, and what it can touch.
+
 ### Tools that help you build
 
 You do not have to start from scratch. [LangChain](https://github.com/langchain-ai/langchain) and [LlamaIndex](https://github.com/run-llama/llama_index) help with tools and RAG. [LangGraph](https://github.com/langchain-ai/langgraph) makes approval steps explicit as part of the graph. For a visual start, [n8n](https://github.com/n8n-io/n8n) and [Flowise](https://github.com/FlowiseAI/Flowise) let you build and test a flow, with a human-approval step, before you write code. If you want to run agents inside Kubernetes itself, [kagent](https://github.com/kagent-dev/kagent) is a cloud-native framework built for platform teams. See the full [tools catalog](../../tools/README.md).
@@ -54,6 +61,7 @@ Once your helper matters, treat it like real software:
 - Test prompts like code. A prompt change can quietly break things. Catch it with tests.
 - Trace and log. Record inputs, outputs, and actions. OpenTelemetry can trace AI calls the same way it traces services.
 - Watch cost and latency. Try a small, cheap model first. Use a big one only when you need it. Cache where you can.
+- Put a gateway in front once more than one thing calls a model. A gateway such as [LiteLLM](https://github.com/BerriAI/litellm) gives you one place for per-team keys, spend caps, rate limits, and logs, instead of API keys scattered across repos.
 - Version your prompts and models, so you know what produced a given result.
 
 ## Guardrails

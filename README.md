@@ -126,7 +126,7 @@ When you are ready to build tools instead of just using them. Trust level: build
 
 - Learn tool calling: how a model actually does things through functions you define.
 - Learn RAG (retrieval-augmented generation): grounding the model in your own runbooks, docs, and past incidents so it stops guessing.
-- Look at MCP (Model Context Protocol), a common way to connect tools to models. Start with read-only tools.
+- Look at MCP (Model Context Protocol), a common way to connect tools to models. Start with read-only tools, pin a spec revision, and use real authentication rather than a token in a config file.
 - Design the approval step first, not last. Decide up front where a human says yes.
 - Track quality over time: test your prompts like code, watch for regressions, and log what the model did.
 - Watch cost and speed. Try a small, cheap model first and only reach for a big one when you need it.
@@ -139,6 +139,7 @@ The part most guides skip. This is where your security and platform experience m
 - Put policy in front of anything an agent proposes (Kyverno or OPA), so it cannot suggest something that breaks your rules.
 - Log every AI decision: the input, the reasoning, and the action taken. You want a clear audit trail.
 - Watch for prompt injection, where hostile input tries to make the model do something it should not. Treat model input like untrusted user input.
+- Treat the tools you connect to a model as a supply chain. An MCP server is code running with the access you gave it, so review it, pin it, and scope its credentials.
 - Keep a kill switch and limit the blast radius. If something goes wrong, you want to stop it fast and keep the damage small.
 - Be honest about when not to use AI at all.
 
@@ -152,6 +153,7 @@ A short, honest list. These are starting points, not endorsements. Check each on
 - Keep: open-source alert management with some AI features.
 - Ollama and vLLM: run models locally when you cannot send data to a hosted API.
 - LangChain and LlamaIndex: frameworks for building your own AI tools.
+- LiteLLM: an AI gateway, so every team's model calls go through one place with keys, budgets, and logs.
 
 ## 8. Things to avoid
 
@@ -160,6 +162,7 @@ A short, honest list. These are starting points, not endorsements. Check each on
 - Trusting a confident answer that has no grounding and no sources.
 - Automating a fix based on a noisy or unproven signal.
 - Running an agent with broad, standing credentials.
+- Connecting a third-party tool server you have not reviewed to something that matters.
 - Having no record of what the AI did and why.
 
 ## FAQ

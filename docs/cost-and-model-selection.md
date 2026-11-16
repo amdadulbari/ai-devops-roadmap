@@ -43,6 +43,7 @@ For a small model, a single summary like this is a fraction of a cent. That soun
 - Trim the input. Send the relevant time window of logs, not the whole file. Summarize first, then ask follow-up questions.
 - Cache. If you ask the same thing often, cache the answer.
 - Set spending limits. Most providers let you set a hard cap. Use it.
+- Put a gateway in front. Once more than one team or tool calls a model, route them through an AI gateway such as [LiteLLM](https://github.com/BerriAI/litellm). You get one place to issue per-team keys, set budgets, and see who spent what, instead of finding out from the invoice.
 - Cap agent steps. Never let an agent loop without a maximum number of calls.
 - Watch it. Track spend the way you track any other resource. See [Langfuse](https://github.com/langfuse/langfuse) and [OpenTelemetry](https://opentelemetry.io) for tracing AI calls.
 

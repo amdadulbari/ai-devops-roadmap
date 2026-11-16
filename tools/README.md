@@ -2,7 +2,7 @@
 
 A curated list of tools for using AI in DevOps, grouped by what they do. Each entry has a link, a one-line description, and a trust level, so you know how much control you keep.
 
-These are starting points, not endorsements. Check each one against your own needs, and read its own docs, since features change over time.
+These are starting points, not endorsements. Check each one against your own needs, and read its own docs, since features change over time. Last reviewed November 2026.
 
 Trust levels: Assist means it drafts or explains. Gate means it acts behind a review or check. Auto means it can act on its own, which you should approach with care.
 
@@ -19,8 +19,10 @@ See the [k8sgpt quickstart](../examples/k8sgpt-quickstart.md).
 
 | Tool | What it does | Trust |
 |------|--------------|-------|
-| [HolmesGPT](https://github.com/HolmesGPT/holmesgpt) | Investigates alerts and incidents by gathering context and suggesting causes. Read-only by default, and works across Kubernetes, VMs, and cloud services. A CNCF Sandbox project. | Assist to Gate |
+| [HolmesGPT](https://github.com/HolmesGPT/holmesgpt) | Investigates alerts and incidents by gathering context and suggesting causes. Read-only by default, and works across Kubernetes, VMs, and cloud services. A CNCF Sandbox project, Apache 2.0. | Assist to Gate |
 | [Robusta](https://github.com/robusta-dev/robusta) | Kubernetes monitoring and automation, with enrichment for alerts. | Assist to Gate |
+
+A note on ownership: Freshworks acquired Robusta, the company behind HolmesGPT and Robusta, in October 2026. Both projects are still open source under their own licenses, and HolmesGPT remains a CNCF Sandbox project, so the code is not going anywhere. As with any vendor-backed open source, it is worth watching where the roadmap goes before you build something load-bearing on it.
 
 ## Alerting and AIOps
 
@@ -62,6 +64,16 @@ For when you build your own helpers. See [topic 6](../topics/06-build-your-own/R
 | Tool | What it does | Trust |
 |------|--------------|-------|
 | [Model Context Protocol (MCP)](https://modelcontextprotocol.io) | A common way to expose tools and data to models. Start with read-only tools. | Build |
+| [MCP specification](https://modelcontextprotocol.io/specification) | The protocol itself. Revisions are named by date, and the current one is 2026-07-28. Pin a revision rather than tracking the tip. | Build |
+| [Official MCP registry](https://registry.modelcontextprotocol.io) | A catalog of public MCP servers, still in preview. Useful for discovery, but treat a third-party server as code you are about to run. | Build |
+
+## Gateways: one place to control model access
+
+If more than one team or tool at your company calls a model, you eventually want a single door they all go through. A gateway is where you put per-team keys, spend caps, rate limits, and logging, which is much easier than chasing API keys around a dozen repos.
+
+| Tool | What it does | Trust |
+|------|--------------|-------|
+| [LiteLLM](https://github.com/BerriAI/litellm) | An AI gateway: one OpenAI-compatible endpoint in front of many providers and local models, with per-team virtual keys, spend tracking, budgets, and rate limits. | Gate |
 
 ## Watching your AI in production (LLMOps)
 

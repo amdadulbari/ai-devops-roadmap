@@ -6,6 +6,10 @@ Plain-language definitions of the AI terms you will meet in this roadmap. No jar
 
 A model that plans a series of steps and uses tools to carry them out, instead of just answering in text. Powerful, and the point where you need gates and least privilege.
 
+### AI gateway
+
+One endpoint that sits between your teams and the model providers. It is where you put per-team keys, spend caps, rate limits, and logging, so you are not chasing API keys around a dozen repos.
+
 ### Context window
 
 How much text a model can look at in one request, measured in tokens. Bigger windows cost more and can still miss details buried in the middle.
@@ -13,6 +17,14 @@ How much text a model can look at in one request, measured in tokens. Bigger win
 ### Embedding
 
 A way to turn text into numbers so a computer can find similar text. It is what powers search in a RAG system.
+
+### Eval
+
+A test suite for AI output. A set of inputs with known-good answers that you run after changing a prompt or a model, so a quiet regression shows up before your users find it. The AI version of a unit test, and just as worth having.
+
+### Excessive agency
+
+Giving a model or agent more power than its job needs: broader credentials, more tools, or the ability to act without review. One of the top risks on OWASP's 2026 list for LLM applications, and the thing trust levels exist to prevent.
 
 ### Fine-tuning
 
@@ -45,6 +57,10 @@ Running AI features like production software: testing prompts, evaluating qualit
 ### MCP (Model Context Protocol)
 
 A common way to connect tools and data to models, so many AI apps can use the same tools. Expose read-only tools first.
+
+### MCP server
+
+A process that exposes a set of tools or data to models over MCP. Worth remembering that it is code running with whatever access you gave it, so treat one you did not write like any other dependency near production.
 
 ### Model
 

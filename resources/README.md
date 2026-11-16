@@ -1,6 +1,6 @@
 # Further reading
 
-A short, hand-picked list of resources to go deeper. These are chosen for being clear and practical, not for hype. Each link was checked at the time of writing. Links move, so if you find a dead one, please open an issue or a pull request.
+A short, hand-picked list of resources to go deeper. These are chosen for being clear and practical, not for hype. Every link here was checked in November 2026. Links move, so if you find a dead one, please open an issue or a pull request.
 
 ## How LLMs and AI apps work
 
@@ -17,10 +17,12 @@ A short, hand-picked list of resources to go deeper. These are chosen for being 
 ## Connecting tools to models
 
 - [Model Context Protocol](https://modelcontextprotocol.io). A common way to expose tools and data to models. Start with read-only tools.
+- [The MCP specification](https://modelcontextprotocol.io/specification). Worth reading once if you are going to expose your own tools. Revisions are named by date, the current one is 2026-07-28, and pinning a revision saves you surprises.
 
 ## Security and governance
 
-- [OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/). The common security risks for AI apps, including prompt injection.
+- [OWASP Top 10 for LLM Applications 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/). The common security risks for AI apps. Prompt injection is still number one, and excessive agency, giving a model more power than the job needs, moved up to number three. That is this roadmap's whole argument, written as a security list.
+- [OWASP Agentic AI Security Initiative](https://genai.owasp.org/initiatives/agentic-security-initiative/). The companion work on agents that use tools and act across systems, including the Top 10 for Agentic Applications and [Securing Agentic Applications](https://genai.owasp.org/resource/securing-agentic-applications-v2/). Read this one before you let an agent act, not after.
 - [Simon Willison on prompt injection](https://simonwillison.net/tags/prompt-injection/). An ongoing, practical archive of how prompt injection works and why it is hard to fully solve.
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework). A framework for managing the risks of AI systems.
 
@@ -29,7 +31,8 @@ A short, hand-picked list of resources to go deeper. These are chosen for being 
 The ops side of the house. AI sits on top of these practices, it does not replace them.
 
 - [Google SRE books](https://sre.google/books/). Free to read online. Start with Site Reliability Engineering and the SRE Workbook.
-- [DORA research](https://dora.dev/research/). Long-running, evidence-based research on what makes software delivery work well, including how AI is affecting teams.
+- [DORA research](https://dora.dev/research/). Long-running, evidence-based research on what makes software delivery work well.
+- [DORA on AI](https://dora.dev/ai/). Their dedicated work on AI-assisted development, including the [ROI report](https://dora.dev/ai/roi/report/). The finding worth carrying around: AI amplifies whatever your engineering foundations already are, good or bad.
 
 ## Observability for AI (LLMOps)
 

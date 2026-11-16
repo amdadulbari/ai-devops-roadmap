@@ -43,6 +43,18 @@ Prompt injection is when hostile text in the input tries to make the model do so
 - Keep the trusted instructions separate from the untrusted data where you can.
 - Put a human gate in front of any action that matters.
 
+## Treat the tools you connect as a supply chain
+
+The moment you connect tools to a model, usually with [MCP](https://modelcontextprotocol.io), those tools become part of your production surface. A tool server is code that runs with whatever access you gave it, and it decides what text goes into the model.
+
+- Review a third-party server before you run it, the same as any dependency you are about to put near production. A registry listing is discovery, not a security review.
+- Pin versions. Do not let an auto-update change what a tool can do on your cluster without you noticing.
+- Give each server its own scoped credentials, so one bad tool cannot reach everything.
+- Remember that tool output is untrusted input. A server that returns text from an external system can carry an injection payload straight into your model's context.
+- Keep an inventory: which servers you run, who owns them, and what each one can touch.
+
+For the risks here written up properly, see OWASP's [Agentic AI Security Initiative](https://genai.owasp.org/initiatives/agentic-security-initiative/), the companion to the [Top 10 for LLM Applications](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/). In the 2026 edition, excessive agency, which means giving a model more power than the task needs, moved up to number three. Least privilege is not just good hygiene here. It is the control that matters most.
+
 ## Keep a kill switch and limit the blast radius
 
 - Have a fast way to turn a helper off if it misbehaves.
@@ -52,7 +64,7 @@ Prompt injection is when hostile text in the input tries to make the model do so
 
 ## Cost and data governance
 
-- Watch spend. AI calls cost money, and an agent in a loop can cost a lot fast. Set limits.
+- Watch spend. AI calls cost money, and an agent in a loop can cost a lot fast. Set limits. A gateway in front of your model calls is the easiest place to enforce a hard cap, see [cost and choosing a model](../../docs/cost-and-model-selection.md).
 - Know where your data goes. Hosted models see what you send. Keep secrets and customer data out, or use local models.
 - Meet your compliance needs. If you have data residency rules, they apply to AI calls too.
 
